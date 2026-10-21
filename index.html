@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicología Falcón</title>
+<!-- Vista previa estática de resources/views/welcome.blade.php (Tailwind vía CDN). No es parte del código. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: {
+    extend: {
+      // TODO: paleta provisional basada en el render adjunto.
+      // Reemplazar por los valores oficiales de marca (colores, tipografías, logo) cuando la clínica los comparta.
+      colors: {
+        pf: {
+          cream: '#F8F4EA',      // fondo general de la página
+          'cream-dark': '#EFEADA', // franja "Servicios y precios"
+          white: '#FFFFFF',
+          text: '#2B2A25',       // texto principal
+          'text-muted': '#6B6A61', // texto secundario / gris
+          border: '#E4DFD0',
+          green: {
+            50: '#EEF1E8',
+            100: '#DCE3D0',
+            300: '#9FAE87',
+            500: '#5C6E4A',   // acentos / estados seleccionados
+            700: '#46523A',   // botones primarios
+            900: '#2F3826',   // sidebar dashboard / footer
+          },
+        },
+      },
+      fontFamily: {
+        // TODO: sustituir por la tipografía oficial de marca.
+        serif: ['"Playfair Display"', 'ui-serif', 'Georgia', 'serif'],
+        script: ['"Playfair Display"', 'ui-serif', 'serif'], // usado en cursiva para el logotipo
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        xl: '0.875rem',
+        '2xl': '1.25rem',
+      },
+    },
+  } };</script>
+<style type="text/tailwindcss">
+@layer base { body { @apply bg-pf-cream text-pf-text font-sans antialiased; } html { scroll-behavior: smooth; } }
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-pf-green-700 px-6 py-3 text-sm font-medium text-white transition hover:bg-pf-green-900;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-pf-green-700 px-6 py-3 text-sm font-medium text-pf-green-700 transition hover:bg-pf-green-50;
+  }
+  .card {
+    @apply rounded-2xl border border-pf-border bg-pf-white shadow-sm;
+  }
+  .logo-script {
+    @apply font-script italic text-xl text-pf-text;
+  }
+}
+</style>
+</head>
+<body class="bg-pf-cream text-pf-text font-sans">
+<header class="border-b border-pf-border bg-pf-cream">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <a href="#" class="logo-script">Psicología Falcón</a>
+
+        <nav class="hidden items-center gap-8 text-sm text-pf-text md:flex">
+            <a href="#" class="hover:text-pf-green-700">Inicio</a>
+            <a href="#nosotras" class="hover:text-pf-green-700">Sobre nosotras</a>
+            <a href="#servicios" class="hover:text-pf-green-700">Servicios</a>
+            <a href="#servicios" class="hover:text-pf-green-700">Terapias</a>
+            <a href="#contacto" class="hover:text-pf-green-700">Contacto</a>
+        </nav>
+
+        <a href="#agendar"
+           class="rounded-full bg-pf-green-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white hover:bg-pf-green-900">
+            Agendar cita
+        </a>
+    </div>
+</header>
+
+<main>
+
+    
+    <section class="mx-auto max-w-7xl px-6 pt-10 pb-16 lg:px-10">
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pf-green-700">
+                    Pachuca · Mérida · Online
+                </p>
+
+                <h1 class="mt-4 font-serif text-5xl leading-tight text-pf-text lg:text-6xl">
+                    Psicología<br>Falcón
+                </h1>
+
+                <p class="mt-5 max-w-md text-pf-text-muted">
+                    Acompañamiento profesional, humano y cercano para tu bienestar emocional.
+                </p>
+
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="#agendar" class="btn-primary">
+                        Agendar mi cita
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </a>
+                    <a href="#nosotras" class="btn-outline">Conócenos</a>
+                </div>
+
+                <div class="mt-6">
+                    
+<p class="mx-auto max-w-2xl text-center text-xs text-pf-text-muted">
+    Si tú o alguien que conoces está en una crisis o en riesgo, comunícate al
+    <strong class="text-pf-text">911</strong> o a la
+    <strong class="text-pf-text">Línea de la Vida (800 911 2000)</strong>, disponible 24 horas.
+    Este sitio no está diseñado para atender emergencias.
+</p>
+
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl bg-pf-cream-dark">
+                
+                <img
+                    src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=80"
+                    alt="Psicóloga de Psicología Falcón en sesión"
+                    class="h-full w-full object-cover"
+                >
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="nosotras" class="mx-auto max-w-7xl px-6 pb-16 lg:px-10">
+        <h2 class="mb-6 font-serif text-2xl text-pf-text">Nuestras psicólogas</h2>
+
+        
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="#" class="card flex items-center gap-4 p-4 hover:shadow-md">
+                <img src="https://i.pravatar.cc/120?img=32" alt="Linda Madel Falcón Aldana" class="h-16 w-16 rounded-full object-cover">
+                <div>
+                    <p class="font-serif text-base text-pf-text">Linda Madel<br>Falcón Aldana</p>
+                    <p class="text-sm text-pf-text-muted">Psicóloga Fundadora</p>
+                    <span class="mt-1 inline-block text-sm text-pf-green-700">Ver perfil →</span>
+                </div>
+            </a>
+
+            <a href="#" class="card flex items-center gap-4 p-4 hover:shadow-md">
+                <img src="https://i.pravatar.cc/120?img=47" alt="Brenda Naomi García Díaz" class="h-16 w-16 rounded-full object-cover">
+                <div>
+                    <p class="font-serif text-base text-pf-text">Brenda Naomi<br>García Díaz</p>
+                    <p class="text-sm text-pf-text-muted">Psicóloga · Terapia infantil y adolescente</p>
+                    <span class="mt-1 inline-block text-sm text-pf-green-700">Ver perfil →</span>
+                </div>
+            </a>
+
+            <a href="#" class="card flex items-center gap-4 p-4 hover:shadow-md">
+                <img src="https://i.pravatar.cc/120?img=25" alt="Psicóloga Asociada" class="h-16 w-16 rounded-full object-cover">
+                <div>
+                    <p class="font-serif text-base text-pf-text">Ana Karen<br>González Cisneros</p>
+                    <p class="text-sm text-pf-text-muted">Psicóloga Asociada</p>
+                    <span class="mt-1 inline-block text-sm text-pf-green-700">Ver perfil →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    
+    
+    <section id="servicios" class="bg-pf-cream-dark py-14">
+        <div class="mx-auto max-w-7xl px-6 lg:px-10">
+            <h2 class="mb-2 font-serif text-2xl text-pf-text">Servicios y precios</h2>
+            <p class="mb-8 text-sm text-pf-text-muted">
+                El precio de la sesión depende de cuántas personas asisten, no del tema que se trabaja.
+            </p>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="card flex items-start gap-4 p-5">
+                    <span class="rounded-xl bg-pf-green-50 p-3 text-pf-green-700">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+                    </span>
+                    <div>
+                        <p class="font-medium text-pf-text">Terapia individual</p>
+                        <p class="text-sm text-pf-text-muted">Sesión de 60 min</p>
+                        <p class="mt-1 font-serif text-lg text-pf-text">$1,000 MXN</p>
+                    </div>
+                </div>
+
+                <div class="card flex items-start gap-4 p-5">
+                    <span class="rounded-xl bg-pf-green-50 p-3 text-pf-green-700">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" /></svg>
+                    </span>
+                    <div>
+                        <p class="font-medium text-pf-text">Terapia de pareja</p>
+                        <p class="text-sm text-pf-text-muted">Sesión de 60 min</p>
+                        <p class="mt-1 font-serif text-lg text-pf-text">$1,250 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 mb-3 text-sm font-medium text-pf-text">También atendemos estos temas de consulta:</p>
+            <div class="flex flex-wrap gap-2">
+                                    <span class="rounded-full border border-pf-green-300 bg-pf-white px-4 py-1.5 text-sm text-pf-text">
+                        Terapia familiar
+                    </span>
+                                    <span class="rounded-full border border-pf-green-300 bg-pf-white px-4 py-1.5 text-sm text-pf-text">
+                        Tanatología
+                    </span>
+                                    <span class="rounded-full border border-pf-green-300 bg-pf-white px-4 py-1.5 text-sm text-pf-text">
+                        Perfiles psicológicos (evaluación)
+                    </span>
+                                    <span class="rounded-full border border-pf-green-300 bg-pf-white px-4 py-1.5 text-sm text-pf-text">
+                        Orientación vocacional
+                    </span>
+                                    <span class="rounded-full border border-pf-green-300 bg-pf-white px-4 py-1.5 text-sm text-pf-text">
+                        Terapia infanto-juvenil
+                    </span>
+                
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contacto" class="bg-pf-green-900 text-pf-cream">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm md:flex-row md:items-center md:justify-between lg:px-10">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span class="inline-flex items-center gap-2">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                Pachuca, Hidalgo
+            </span>
+            <span class="inline-flex items-center gap-2">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                Mérida, Yucatán
+            </span>
+            <a href="https://wa.me/527711467031" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:underline">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.36a9.86 9.86 0 004.62 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg>
+                Escríbenos por WhatsApp · 771 146 7031
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <span class="text-pf-green-100">Síguenos</span>
+            <a href="https://instagram.com/psicologia_falcon" target="_blank" rel="noopener" class="hover:opacity-80" aria-label="Instagram">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.5.5.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 01-1.15 1.77 4.9 4.9 0 01-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 01-1.77-1.15 4.9 4.9 0 01-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 015.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="hover:opacity-80" aria-label="Facebook">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="border-t border-pf-green-700/60 px-6 py-4 text-center text-xs text-pf-green-100 lg:px-10">
+        <p>
+            Si tú o alguien que conoces está en una crisis o en riesgo, comunícate al
+            <strong>911</strong> o a la <strong>Línea de la Vida (800 911 2000)</strong>, disponible 24 horas.
+            Este sitio no está diseñado para atender emergencias.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
